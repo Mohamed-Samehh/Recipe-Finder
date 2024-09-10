@@ -1,4 +1,4 @@
-# Recipe Finder
+# Recipe Finder (Cooking Recipe Website)
 
 This project is an Angular application that allows users to search for and explore recipes from various sources. The app features an interactive recipe search page and a detailed view of individual recipes, with options to suggest new recipes via a form. The application uses **Bootstrap** for responsive design and **Angular routing** for navigation between pages.
 
@@ -14,8 +14,10 @@ GitHub Pages is used to deploy the Angular application, allowing users to intera
 - [Overview](#overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [APIs](#apis)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Deployment](#deployment)
 
 ## Overview
 
@@ -36,6 +38,16 @@ Recipe Finder is designed to make it easy for users to search for recipes based 
 - **Bootstrap 5**: A popular CSS framework for building responsive, mobile-first projects.
 - **RxJS**: Used for managing asynchronous data streams within Angular.
 - **TypeScript**: Strongly typed JavaScript used throughout the application.
+
+## APIs
+
+This project uses the following APIs from TheMealDB:
+
+1. **Search Recipes**: Fetches a list of recipes based on a search query.
+   - **URL**: `https://www.themealdb.com/api/json/v1/1/search.php?s=`
+
+2. **Recipe Details**: Fetches detailed information about a specific recipe using its ID.
+   - **URL**: `https://www.themealdb.com/api/json/v1/1/lookup.php?i=`
 
 ## Installation
 
