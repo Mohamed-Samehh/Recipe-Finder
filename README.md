@@ -90,4 +90,4 @@ The project can be ready for deployment using the following steps:
 
 1. **Build the Project**:
    ```bash
-   ng build --output-path docs --base-href /recipe-finder/
+   ng build --output-path docs --base-href /Recipe-Finder/
