@@ -86,7 +86,7 @@ Once the application is running:
 
 ## Deployment
 
-The project can be deployed to GitHub Pages using the following steps:
+The project can be ready for deployment using the following steps:
 
 1. **Build the Project**:
    ```bash
