@@ -1,4 +1,4 @@
-# Recipe Finder (Cooking Recipe Website)
+# Recipe Finder (Cooking Recipes Website)
 
 This project is an Angular application that allows users to search for and explore recipes from various sources. The app features an interactive recipe search page and a detailed view of individual recipes, with options to suggest new recipes via a form. The application uses **Bootstrap** for responsive design and **Angular routing** for navigation between pages.
 
