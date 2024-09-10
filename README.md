@@ -78,4 +78,4 @@ The project can be deployed to GitHub Pages using the following steps:
 
 1. **Build the Project**:
    ```bash
-   ng build --prod --output-path docs --base-href /recipe-finder/
+   ng build --output-path docs --base-href /recipe-finder/
