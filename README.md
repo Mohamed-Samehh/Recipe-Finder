@@ -56,8 +56,8 @@ Follow these steps to install and run the Recipe Finder project:
 1. **Clone the Repository**:
     - First, clone the repository from GitHub:
     ```bash
-    git clone https://github.com/your-username/recipe-finder
-    cd recipe-finder
+    git clone https://github.com/your-username/Recipe-Finder
+    cd Recipe-Finder
     ```
 
 2. **Install Dependencies**:
