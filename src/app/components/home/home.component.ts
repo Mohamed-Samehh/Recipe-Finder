@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
-  title = 'Recipe Finder';
+export class HomeComponent {
+
 }

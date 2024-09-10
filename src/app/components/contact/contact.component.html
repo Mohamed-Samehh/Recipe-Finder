@@ -1,0 +1,74 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Suggest a Recipe</h2>
+  <form #suggestRecipeForm="ngForm" (ngSubmit)="onSubmit(suggestRecipeForm)">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        ngModel
+        #name="ngModel"
+        required
+        minlength="2"
+      />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+        <div *ngIf="name.errors?.['required']">Name is required.</div>
+        <div *ngIf="name.errors?.['minlength']">Name must be at least 2 characters long.</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        ngModel
+        #email="ngModel"
+        required
+        email
+      />
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+        <div *ngIf="email.errors?.['email']">Invalid email address.</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="dishName" class="form-label">Dish Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="dishName"
+        name="dishName"
+        ngModel
+        #dishName="ngModel"
+        required
+        minlength="2"
+      />
+      <div *ngIf="dishName.invalid && (dishName.dirty || dishName.touched)" class="text-danger">
+        <div *ngIf="dishName.errors?.['required']">Dish name is required.</div>
+        <div *ngIf="dishName.errors?.['minlength']">Dish name must be at least 2 characters long.</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="instructions" class="form-label">Instructions</label>
+      <textarea
+        class="form-control"
+        id="instructions"
+        name="instructions"
+        rows="4"
+        ngModel
+        #instructions="ngModel"
+        required
+        minlength="10"
+      ></textarea>
+      <div *ngIf="instructions.invalid && (instructions.dirty || instructions.touched)" class="text-danger">
+        <div *ngIf="instructions.errors?.['required']">Instructions are required.</div>
+        <div *ngIf="instructions.errors?.['minlength']">Instructions must be at least 10 characters long.</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-5" [disabled]="suggestRecipeForm.invalid">Send</button>
+  </form>
+</div>

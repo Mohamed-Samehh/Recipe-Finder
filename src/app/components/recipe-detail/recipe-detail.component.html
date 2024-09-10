@@ -1,0 +1,31 @@
+<div class="container mt-4 mb-4" *ngIf="recipe">
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <div class="card shadow-sm">
+        <img [src]="recipe.strMealThumb" class="card-img-top" alt="{{ recipe.strMeal }}" style="object-fit: cover; height: 500px;" />
+        <div class="card-body">
+          <h1 class="card-title mb-4">{{ recipe.strMeal }}</h1>
+
+          <h5 class="card-subtitle mb-2 text-muted">Ingredients</h5>
+          <ul class="mb-4">
+            <li *ngFor="let ingredient of ingredients">{{ ingredient }}</li>
+          </ul>
+
+          <h5 class="card-subtitle mb-2 text-muted">Instructions</h5>
+          <p class="card-text">{{ recipe.strInstructions }}</p>
+
+          <button class="btn btn-primary mt-4 d-flex align-items-center" [routerLink]="['/search']">
+            <i class="fa fa-arrow-left me-2 custom-icon"></i> Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4" *ngIf="errorMessage">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Error:</strong> {{ errorMessage }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
