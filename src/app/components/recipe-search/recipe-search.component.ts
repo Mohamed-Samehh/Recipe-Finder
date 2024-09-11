@@ -15,6 +15,7 @@ export class RecipeSearchComponent implements OnInit {
   recipes: any[] = [];
   searchTerm: string = '';
   noResults: boolean = false;
+  showTopSearched: boolean = true;
   currentPage: number = 1;
   totalPages: number = 1;
   itemsPerPage: number = 6;
@@ -31,16 +32,22 @@ export class RecipeSearchComponent implements OnInit {
       this.recipes = response.meals || [];
       this.noResults = this.recipes.length === 0;
       this.paginate();
+      this.showTopSearched = true; // Show the "Top Searched Dishes" message when no search term is entered
     });
   }
 
   search(): void {
     this.currentPage = 1;
-    this.recipeService.searchRecipes(this.searchTerm).subscribe((response) => {
-      this.recipes = response.meals || [];
-      this.noResults = this.recipes.length === 0;
-      this.paginate();
-    });
+    if (this.searchTerm === '') {
+      this.loadAllRecipes();
+    } else {
+      this.showTopSearched = false; // Hide "Top Searched Dishes" when searching
+      this.recipeService.searchRecipes(this.searchTerm).subscribe((response) => {
+        this.recipes = response.meals || [];
+        this.noResults = this.recipes.length === 0;
+        this.paginate();
+      });
+    }
   }
 
   viewRecipeDetail(recipe: any) {

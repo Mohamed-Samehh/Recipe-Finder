@@ -29,6 +29,11 @@
     </div>
   </div>
 
+  <!-- Top Searched Dishes -->
+  <div *ngIf="showTopSearched && !noResults" class="alert alert-info text-center">
+    <strong>Top Searched Dishes</strong> — Check out some of the most popular recipes!
+  </div>
+
   <!-- No Results Message -->
   <div *ngIf="noResults" class="alert alert-warning text-center alert-dismissible fade show" role="alert">
     <strong>Oh no!</strong> No results found. Please try a different search term.

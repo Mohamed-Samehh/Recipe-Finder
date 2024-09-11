@@ -11,8 +11,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactComponent {
   message: { text: string; type: 'success' | 'error' } | null = null;
+  submitted = false;
 
   onSubmit(form: any): void {
+    this.submitted = true;
     if (form.valid) {
       this.message = { text: 'Suggestion sent successfully!', type: 'success' };
       this.resetForm(form);
@@ -22,6 +24,7 @@ export class ContactComponent {
   }
 
   resetForm(form: any): void {
+    this.submitted = false;
     form.resetForm();
   }
 }
