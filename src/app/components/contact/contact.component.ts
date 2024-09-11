@@ -16,10 +16,10 @@ export class ContactComponent {
   onSubmit(form: any): void {
     this.submitted = true;
     if (form.valid) {
-      this.message = { text: 'Suggestion sent successfully!', type: 'success' };
+      this.message = { text: 'Your recipe suggestion has been sent. Thanks for sharing!', type: 'success' };
       this.resetForm(form);
     } else {
-      this.message = { text: 'Please fill out the form correctly.', type: 'error' };
+      this.message = { text: 'There are errors in the form. Please correct them and try again.', type: 'error' };
     }
   }
 

@@ -30,8 +30,9 @@
   </div>
 
   <!-- Top Searched Dishes -->
-  <div *ngIf="showTopSearched && !noResults" class="alert alert-info text-center">
+  <div *ngIf="showTopSearched" class="alert alert-info text-center alert-dismissible fade show" role="alert">
     <strong>Top Searched Dishes</strong> — Check out some of the most popular recipes!
+    <button type="button" class="btn-close" aria-label="Close" (click)="closeTopSearched()"></button>
   </div>
 
   <!-- No Results Message -->

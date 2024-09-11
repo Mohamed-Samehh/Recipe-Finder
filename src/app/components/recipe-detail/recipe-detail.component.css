@@ -2,3 +2,12 @@
   position: relative;
   top: 0.8px;
 }
+
+.youtube-link {
+  transition: color 0.5s ease, font-weight 0.05s ease !important;
+}
+
+.youtube-link:hover {
+  color: #a1221f !important;
+  font-weight: bold !important;
+}

@@ -29,10 +29,10 @@ export class RecipeSearchComponent implements OnInit {
 
   loadAllRecipes(): void {
     this.recipeService.searchRecipes('').subscribe((response) => {
-      this.recipes = response.meals || [];
+      this.recipes = (response.meals || []).slice(0, 24);
       this.noResults = this.recipes.length === 0;
       this.paginate();
-      this.showTopSearched = true; // Show the "Top Searched Dishes" message when no search term is entered
+      this.showTopSearched = true;
     });
   }
 
@@ -41,7 +41,7 @@ export class RecipeSearchComponent implements OnInit {
     if (this.searchTerm === '') {
       this.loadAllRecipes();
     } else {
-      this.showTopSearched = false; // Hide "Top Searched Dishes" when searching
+      this.showTopSearched = false;
       this.recipeService.searchRecipes(this.searchTerm).subscribe((response) => {
         this.recipes = response.meals || [];
         this.noResults = this.recipes.length === 0;
@@ -64,5 +64,9 @@ export class RecipeSearchComponent implements OnInit {
   changePage(page: number): void {
     this.currentPage = page;
     this.paginate();
+  }
+
+  closeTopSearched(): void {
+    this.showTopSearched = false;
   }
 }
