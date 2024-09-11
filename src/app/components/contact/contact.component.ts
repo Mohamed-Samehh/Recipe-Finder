@@ -7,15 +7,17 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+  message: { text: string; type: 'success' | 'error' } | null = null;
+
   onSubmit(form: any): void {
     if (form.valid) {
-      alert('Form submitted successfully!');
+      this.message = { text: 'Suggestion sent successfully!', type: 'success' };
       this.resetForm(form);
     } else {
-      alert('Please fill out the form correctly.');
+      this.message = { text: 'Please fill out the form correctly.', type: 'error' };
     }
   }
 
