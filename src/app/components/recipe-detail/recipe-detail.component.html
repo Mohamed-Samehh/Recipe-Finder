@@ -15,24 +15,24 @@
           <div class="text-center mb-5">
             <div class="row justify-content-center gy-3">
 
-              <div class="col-8 col-ms-auto">
+              <div class="col-12 col-ms-auto">
                 <div class="bg-light border rounded-pill px-4 py-2 shadow-sm">
                   <span class="text-primary fw-bold">Category:</span> {{ recipe.strCategory }}
                 </div>
               </div>
 
-              <div class="col-8 col-ms-auto">
+              <div class="col-12 col-ms-auto">
                 <div class="bg-light border rounded-pill px-4 py-2 shadow-sm">
                   <span class="text-success fw-bold">Cuisine:</span> {{ recipe.strArea }}
                 </div>
               </div>
 
-              <div class="col-8 col-ms-auto">
+              <div class="col-12 col-ms-auto">
+                <a [href]="recipe.strYoutube" target="_blank" class="text-danger text-decoration-none youtube-link">
                 <div class="bg-light border rounded-pill px-4 py-2 shadow-sm">
-                  <a [href]="recipe.strYoutube" target="_blank" class="text-danger text-decoration-none youtube-link">
                     <i class="fa-brands fa-youtube me-2"></i>Watch on YouTube
-                  </a>
                 </div>
+              </a>
               </div>
 
             </div>

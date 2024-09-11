@@ -4,10 +4,11 @@
 }
 
 .youtube-link {
-  transition: color 0.5s ease, font-weight 0.05s ease !important;
+  transition: color 0.5s ease, font-size 0.1s ease, font-weight 0.05s ease !important;
 }
 
 .youtube-link:hover {
   color: #a1221f !important;
+  font-size: 1.1em !important;
   font-weight: bold !important;
 }
