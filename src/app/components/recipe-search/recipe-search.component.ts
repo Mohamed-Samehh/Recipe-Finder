@@ -20,6 +20,7 @@ export class RecipeSearchComponent implements OnInit {
   totalPages: number = 1;
   itemsPerPage: number = 6;
   paginatedRecipes: any[] = [];
+  isLoading: boolean = false;
 
   constructor(private recipeService: RecipeService, private router: Router) {}
 
@@ -28,16 +29,19 @@ export class RecipeSearchComponent implements OnInit {
   }
 
   loadAllRecipes(): void {
+    this.isLoading = true;
     this.recipeService.searchRecipes('').subscribe((response) => {
       this.recipes = (response.meals || []).slice(0, 24);
       this.noResults = this.recipes.length === 0;
       this.paginate();
       this.showTopSearched = true;
+      this.isLoading = false;
     });
   }
 
   search(): void {
     this.currentPage = 1;
+    this.isLoading = true;
     if (this.searchTerm === '') {
       this.loadAllRecipes();
     } else {
@@ -46,6 +50,7 @@ export class RecipeSearchComponent implements OnInit {
         this.recipes = response.meals || [];
         this.noResults = this.recipes.length === 0;
         this.paginate();
+        this.isLoading = false;
       });
     }
   }

@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <!-- Header Section -->
   <div class="text-center bg-primary text-white py-5 mb-4 rounded-3 shadow-lg">
-    <h1 class="display-4">Find Your Perfect Recipe</h1>
+    <h1 class="display-4"><i class="fa fa-concierge-bell"></i>&nbsp;Find Your Perfect Recipe</h1>
     <p class="lead">Explore thousands of recipes and find something exciting to cook today.</p>
   </div>
 
@@ -29,20 +29,28 @@
     </div>
   </div>
 
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="text-center mt-5">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p>Loading recipes, please wait...</p>
+  </div>
+
   <!-- Top Searched Dishes -->
-  <div *ngIf="showTopSearched" class="alert alert-info text-center alert-dismissible fade show" role="alert">
+  <div *ngIf="!isLoading && showTopSearched" class="alert alert-info text-center alert-dismissible fade show" role="alert">
     <strong>Top Searched Dishes</strong> — Here are a few of our most popular recipes! Explore even more by searching for your favorite dishes.
     <button type="button" class="btn-close" aria-label="Close" (click)="closeTopSearched()"></button>
   </div>
 
   <!-- No Results Message -->
-  <div *ngIf="noResults" class="alert alert-warning text-center alert-dismissible fade show" role="alert">
+  <div *ngIf="!isLoading && noResults" class="alert alert-warning text-center alert-dismissible fade show" role="alert">
     <strong>Oh no!</strong> No results found. Please try a different search term.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="noResults = false"></button>
   </div>
 
   <!-- Recipes Display -->
-  <div *ngIf="!noResults">
+  <div *ngIf="!isLoading && !noResults">
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let recipe of paginatedRecipes">
         <div class="card h-100 recipe-card shadow-lg rounded-3" style="transition: transform 0.3s; overflow: hidden;">
