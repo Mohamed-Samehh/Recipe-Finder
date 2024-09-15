@@ -1,9 +1,10 @@
 <div class="container mt-4">
   <!-- Header Section -->
-  <div class="text-center bg-primary text-white py-5 mb-4 rounded-3 shadow-lg">
-    <h1 class="display-4"><i class="fa fa-concierge-bell"></i>&nbsp;Find Your Perfect Recipe</h1>
-    <p class="lead">Explore thousands of recipes and find something exciting to cook today.</p>
+  <div class="text-center text-white py-5 mb-4 rounded-3 shadow-lg" style="background: url('search image.jpg') center/cover no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.5);">
+    <h1 class="display-4"><i class="fa fa-utensils"></i>&nbsp;Find Your Perfect Recipe</h1>
+    <p class="lead">Cook something new today!</p>
   </div>
+
 
   <!-- Search Bar -->
   <div class="row mb-4">
@@ -39,7 +40,7 @@
 
   <!-- Top Searched Dishes -->
   <div *ngIf="!isLoading && showTopSearched" class="alert alert-info text-center alert-dismissible fade show" role="alert">
-    <strong>Top Searched Dishes</strong> — Here are a few of our most popular recipes! Explore even more by searching for your favorite dishes.
+    <strong>Top Searched Dishes</strong> — Here are a few of our most popular recipes. Explore even more by searching for any dish you want!
     <button type="button" class="btn-close" aria-label="Close" (click)="closeTopSearched()"></button>
   </div>
 
