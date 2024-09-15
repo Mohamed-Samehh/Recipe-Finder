@@ -27,7 +27,7 @@ export class RecipeDetailComponent implements OnInit {
       this.recipeService.getRecipeDetails(id).subscribe((data) => {
         if (data && data.meals) {
           this.recipe = data.meals[0];
-          this.ingredients = this.getIngredients(); // Get ingredients from the API response
+          this.ingredients = this.getIngredients();
         } else {
           this.errorMessage = 'No recipe data found.';
         }
@@ -37,7 +37,6 @@ export class RecipeDetailComponent implements OnInit {
     }
   }
 
-  // Extract the ingredients and measurements from the API response
   getIngredients(): string[] {
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
