@@ -11,3 +11,19 @@
   font-size: 1.1em !important;
   font-weight: bold !important;
 }
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: calc(100vh - 56px);
+  padding: 50px 0;
+}
+
+.separator-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
