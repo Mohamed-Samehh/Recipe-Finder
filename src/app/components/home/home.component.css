@@ -1,8 +1,5 @@
 /* Background Image for the Entire Page */
 .bg-image {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   min-height: calc(100vh - 56px);
   padding: 50px 0;
 }

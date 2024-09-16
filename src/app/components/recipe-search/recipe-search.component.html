@@ -1,4 +1,5 @@
 <div class="container mt-4">
+
   <!-- Header Section -->
   <div class="text-center text-white py-5 mb-4 rounded-3 shadow-lg" style="background: url('search image.jpg') center/cover no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.5);">
     <h1 class="display-4"><i class="fa fa-utensils"></i>&nbsp;Find Your Perfect Recipe</h1>
@@ -31,9 +32,7 @@
 
   <!-- Loading Spinner -->
   <div *ngIf="isLoading" class="text-center mt-5">
-    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-      <span class="visually-hidden">Loading...</span>
-    </div>
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     <p>Loading recipes, please wait...</p>
   </div>
 
