@@ -1,0 +1,63 @@
+<!-- Container for the Dishes Display -->
+<div class="container mt-5 mb-5">
+
+  <!-- Loading Spinner -->
+  <div *ngIf="loading" class="text-center mt-5" style="min-height: calc(100vh - 56px);">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    <p>Loading...</p>
+  </div>
+
+  <!-- Dishes Display -->
+  <div *ngIf="!loading && paginatedDishes.length > 0">
+    <h1 class="text-center text-primary display-4 mb-4">Dishes in {{ categoryName }}</h1>
+    <div class="row" [ngClass]="{ 'justify-content-center': paginatedDishes.length == 1 || paginatedDishes.length == 2 }">
+      <div class="col-md-4 mb-4" *ngFor="let dish of paginatedDishes">
+        <div class="card shadow-lg border-0 rounded-3 separator-card" style="height: 100%;">
+          <img
+            [src]="dish.strMealThumb"
+            class="card-img-top"
+            alt="{{ dish.strMeal }}"
+            (click)="viewRecipeDetail(dish)"
+            style="cursor: pointer; height: 200px; object-fit: cover;"
+          />
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h5 class="card-title">{{ dish.strMeal }}</h5>
+            <button class="btn btn-primary mt-auto" (click)="viewRecipeDetail(dish)">View Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination Controls -->
+    <nav aria-label="Page navigation" class="text-center mt-4">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [ngClass]="{'disabled': currentPage === 1}">
+          <a class="page-link" href="javascript:void(0);" (click)="changePage(currentPage - 1)" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index">
+          <a class="page-link" href="javascript:void(0);" (click)="changePage(i + 1)" [ngClass]="{'active': currentPage === i + 1}">{{ i + 1 }}</a>
+        </li>
+        <li class="page-item" [ngClass]="{'disabled': currentPage === totalPages}">
+          <a class="page-link" href="javascript:void(0);" (click)="changePage(currentPage + 1)" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No Dishes Message -->
+  <div *ngIf="!loading && paginatedDishes.length === 0" class="text-center mt-5">
+    <h4 class="text-muted">No dishes found for this category.</h4>
+  </div>
+
+  <!-- Error Message -->
+  <div class="container mt-4" *ngIf="errorMessage">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error:</strong> {{ errorMessage }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+</div>

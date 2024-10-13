@@ -2,6 +2,8 @@
   "routes": [
     "/",
     "/about",
+    "/areas",
+    "/categories",
     "/contact",
     "/search"
   ]

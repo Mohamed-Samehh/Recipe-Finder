@@ -1,0 +1,59 @@
+<div class="container mt-4">
+  <!-- Header Section -->
+  <div class="text-center text-white py-5 mb-4 rounded-3 shadow-lg" style="background: url('search image.jpg') center/cover no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.5);">
+    <h1 class="display-4 animated fadeIn"><i class="fa fa-list"></i>&nbsp;Explore Meal Categories</h1>
+    <p class="lead animated fadeIn" style="animation-delay: 0.2s;">Discover meals by category and explore a variety of cuisines!</p>
+  </div>
+
+  <!-- Categories Display -->
+  <div *ngIf="categories.length > 0" class="row">
+    <div class="col-md-4 mb-4" *ngFor="let category of categories">
+      <div class="card h-100 shadow-lg rounded-3" style="transition: transform 0.3s; overflow: hidden;">
+        <!-- Category Image -->
+        <img
+          [src]="category.strCategoryThumb"
+          class="card-img-top"
+          alt="{{ category.strCategory }}"
+          (click)="viewCategoryDetails(category)"
+          style="height: 200px; object-fit: cover; cursor: pointer;"
+        />
+        <!-- Card Body -->
+        <div class="card-body d-flex flex-column text-center">
+          <h5 class="card-title mb-3">{{ category.strCategory }}</h5>
+          <p class="card-text">{{ (category.strCategoryDescription | slice:0:100) + '...' }}</p>
+          <button class="btn btn-outline-primary mt-auto" (click)="openModal(category)">More Details</button>
+          <button class="btn btn-primary mt-2" (click)="viewCategoryDetails(category)">View Dishes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="categories.length === 0" class="text-center mt-5">
+    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    <p>Loading categories, please wait...</p>
+  </div>
+
+  <!-- Modal -->
+  <div *ngIf="isModalOpen" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true" style="display: block;" (click)="closeModal()">
+    <div class="modal-dialog modal-dialog-centered" role="document" (click)="$event.stopPropagation()">
+      <div class="modal-content rounded-3 shadow-lg">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="categoryModalLabel">{{ selectedCategory?.strCategory }}</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img [src]="selectedCategory?.strCategoryThumb" alt="{{ selectedCategory?.strCategory }}" class="img-fluid mb-3 rounded" style="max-width: 200px;">
+          <p>{{ selectedCategory?.strCategoryDescription }}</p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Backdrop -->
+  <div *ngIf="isModalOpen" class="modal-backdrop fade show" (click)="closeModal()"></div>
+
+</div>

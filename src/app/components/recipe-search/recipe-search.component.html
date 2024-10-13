@@ -2,8 +2,8 @@
 
   <!-- Header Section -->
   <div class="text-center text-white py-5 mb-4 rounded-3 shadow-lg" style="background: url('search image.jpg') center/cover no-repeat; background-blend-mode: overlay; background-color: rgba(0, 0, 0, 0.5);">
-    <h1 class="display-4"><i class="fa fa-utensils"></i>&nbsp;Find Your Perfect Recipe</h1>
-    <p class="lead">Cook something new today!</p>
+    <h1 class="display-4 animated fadeIn"><i class="fa fa-utensils"></i>&nbsp;Find Your Perfect Recipe</h1>
+    <p class="lead animated fadeIn" style="animation-delay: 0.2s;">Cook something new today!</p>
   </div>
 
   <!-- Search Bar -->
@@ -50,7 +50,7 @@
 
   <!-- Recipes Display -->
   <div *ngIf="!isLoading && !noResults">
-    <div class="row">
+    <div class="row" [ngClass]="{ 'justify-content-center': paginatedRecipes.length == 1 || paginatedRecipes.length == 2 }">
       <div class="col-md-4 mb-4" *ngFor="let recipe of paginatedRecipes">
         <div class="card h-100 recipe-card shadow-lg rounded-3" style="transition: transform 0.3s; overflow: hidden;">
           <!-- Image -->
