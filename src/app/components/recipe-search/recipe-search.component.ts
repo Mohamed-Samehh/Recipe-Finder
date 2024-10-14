@@ -71,6 +71,17 @@ export class RecipeSearchComponent implements OnInit {
     this.paginate();
   }
 
+  pagesToDisplay1(): number[] {
+    return Array(Math.min(5, this.totalPages)).fill(0).map((_, i) => i + 1);
+  }
+
+  pagesToDisplay2(): number[] {
+    if (this.totalPages > 5) {
+      return Array(this.totalPages - 5).fill(0).map((_, i) => i + 6);
+    }
+    return [];
+  }
+
   closeTopSearched(): void {
     this.showTopSearched = false;
   }

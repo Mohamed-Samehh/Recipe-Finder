@@ -1,19 +1,22 @@
 .separator-card {
-  transition: transform 0.3s;
-  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .separator-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-7px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+.page-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.card-title {
-  flex-grow: 1;
+.page-link:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.pagination .active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
 }

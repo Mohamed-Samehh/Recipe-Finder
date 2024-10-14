@@ -1,0 +1,22 @@
+.separator-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.separator-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.page-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+.pagination .active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}

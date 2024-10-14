@@ -36,9 +36,23 @@
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index">
+
+        <li class="page-item" *ngFor="let page of pagesToDisplay1(); let i = index">
           <a class="page-link" href="javascript:void(0);" (click)="changePage(i + 1)" [ngClass]="{'active': currentPage === i + 1}">{{ i + 1 }}</a>
         </li>
+
+        <li class="page-item" *ngIf="totalPages <= 5" [ngClass]="{'disabled': currentPage === totalPages}">
+          <a class="page-link" href="javascript:void(0);" (click)="changePage(currentPage + 1)" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="pagination justify-content-center mt-2" *ngIf="totalPages > 5">
+        <li class="page-item" *ngFor="let page of pagesToDisplay2(); let i = index">
+          <a class="page-link" href="javascript:void(0);" (click)="changePage(i + 6)" [ngClass]="{'active': currentPage === (i + 6)}">{{ i + 6 }}</a>
+        </li>
+
         <li class="page-item" [ngClass]="{'disabled': currentPage === totalPages}">
           <a class="page-link" href="javascript:void(0);" (click)="changePage(currentPage + 1)" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
@@ -46,6 +60,7 @@
         </li>
       </ul>
     </nav>
+
   </div>
 
   <!-- No Dishes Message -->
