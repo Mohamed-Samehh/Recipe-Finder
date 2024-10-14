@@ -27,8 +27,8 @@ Recipe Finder is designed to make it easy for users to search for recipes based 
 
 - **Search for Recipes**: Users can search for recipes by entering keywords such as dish names or ingredients. The application uses the API to fetch a list of recipes based on the search query.
 - **View Recipe Details**: Click on a recipe to view detailed information, including ingredients, instructions, and a meal image. This information is retrieved using the recipe ID from the API.
-- **Filter Meals by Category**: Users can filter recipes based on selected categories, enhancing their search experience.
-- **Filter Meals by Area**: Users can filter recipes based on geographical areas, allowing them to explore regional dishes.
+- **Browse Meals by Category**: Users can view dishes from selected categories, allowing them to explore a variety of recipes grouped by type.
+- **Explore Meals by Area**: Users can view dishes from specific geographical areas, enabling them to discover regional cuisines.
 - **Suggest a Recipe**: Users can suggest new recipes by submitting a form with their name, email, dish name, and instructions.
 - **Responsive Design**: The application is fully responsive, ensuring a smooth experience across different devices.
 - **Pagination**: Recipes are displayed in a paginated format, making it easy to browse large results sets. Users can navigate through multiple pages of recipes with ease.
@@ -102,7 +102,7 @@ Once the application is running:
 - **Search for Recipes**: Use the search bar to find recipes by dish name or ingredient. The application fetches results dynamically from the API.
 - **View Recipe Details**: Click on a recipe to view detailed information such as ingredients and instructions. The details are fetched based on the selected recipe's ID.
 - **Suggest a Recipe**: Navigate to the Suggest a Recipe page to submit a new recipe through a form.
-- **Filter Meals**: Use the available filters to narrow down recipes by category or area.
+- **Browse Meals**: Users can explore recipes by categories or areas, enhancing their culinary experience without needing to search.
 - **Pagination**: Use the pagination controls at the bottom of the search results to browse through multiple pages of recipes.
 
 ## Deployment
