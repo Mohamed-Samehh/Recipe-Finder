@@ -25,11 +25,13 @@ Recipe Finder is designed to make it easy for users to search for recipes based 
 
 ## Features
 
-- **Recipe Search**: Users can search for recipes by entering keywords such as dish names or ingredients.
-- **Recipe Details**: View detailed information about a selected recipe, including ingredients, instructions, and a meal image.
-- **Responsive Design**: The application is fully responsive, ensuring a smooth experience across different devices.
+- **Search for Recipes**: Users can search for recipes by entering keywords such as dish names or ingredients. The application uses the API to fetch a list of recipes based on the search query.
+- **View Recipe Details**: Click on a recipe to view detailed information, including ingredients, instructions, and a meal image. This information is retrieved using the recipe ID from the API.
+- **Filter Meals by Category**: Users can filter recipes based on selected categories, enhancing their search experience.
+- **Filter Meals by Area**: Users can filter recipes based on geographical areas, allowing them to explore regional dishes.
 - **Suggest a Recipe**: Users can suggest new recipes by submitting a form with their name, email, dish name, and instructions.
-- **Pagination**: Recipes are displayed in a paginated format, making it easy to browse large results sets.
+- **Responsive Design**: The application is fully responsive, ensuring a smooth experience across different devices.
+- **Pagination**: Recipes are displayed in a paginated format, making it easy to browse large results sets. Users can navigate through multiple pages of recipes with ease.
 
 ## Technologies Used
 
@@ -45,9 +47,27 @@ This project uses the following APIs from TheMealDB:
 
 1. **Search Recipes**: Fetches a list of recipes based on a search query.
    - **URL**: `https://www.themealdb.com/api/json/v1/1/search.php?s=`
+   - **Response**: A list of recipes matching the search criteria, including their IDs, names, and images.
 
 2. **Recipe Details**: Fetches detailed information about a specific recipe using its ID.
    - **URL**: `https://www.themealdb.com/api/json/v1/1/lookup.php?i=`
+   - **Response**: Detailed information about the recipe, including ingredients, instructions, and a meal image.
+
+3. **Get All Categories**: Retrieves a list of all recipe categories.
+   - **URL**: `https://www.themealdb.com/api/json/v1/1/categories.php`
+   - **Response**: A list of all available recipe categories.
+
+4. **Filter Meals by Category**: Fetches meals filtered by a specific category.
+   - **URL**: `https://www.themealdb.com/api/json/v1/1/filter.php?c=`
+   - **Response**: A list of recipes that belong to the specified category.
+
+5. **Get All Areas**: Retrieves a list of all areas.
+   - **URL**: `https://www.themealdb.com/api/json/v1/1/list.php?a=list`
+   - **Response**: A list of geographical areas available for filtering.
+
+6. **Filter Meals by Area**: Fetches meals filtered by a specific area.
+   - **URL**: `https://www.themealdb.com/api/json/v1/1/filter.php?a=`
+   - **Response**: A list of recipes that belong to the specified area.
 
 ## Installation
 
@@ -79,9 +99,10 @@ Follow these steps to install and run the Recipe Finder project:
 
 Once the application is running:
 
-- **Search for Recipes**: Use the search bar to find recipes by dish name or ingredient.
-- **View Recipe Details**: Click on a recipe to view detailed information such as ingredients and instructions.
+- **Search for Recipes**: Use the search bar to find recipes by dish name or ingredient. The application fetches results dynamically from the API.
+- **View Recipe Details**: Click on a recipe to view detailed information such as ingredients and instructions. The details are fetched based on the selected recipe's ID.
 - **Suggest a Recipe**: Navigate to the Suggest a Recipe page to submit a new recipe through a form.
+- **Filter Meals**: Use the available filters to narrow down recipes by category or area.
 - **Pagination**: Use the pagination controls at the bottom of the search results to browse through multiple pages of recipes.
 
 ## Deployment
