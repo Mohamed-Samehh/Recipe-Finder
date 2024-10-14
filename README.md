@@ -100,7 +100,7 @@ Once the application is running:
 
 - **Search for Recipes**: Use the search bar to find recipes by dish name or ingredient. The application fetches results dynamically from the API.
 - **View Recipe Details**: Click on a recipe to view detailed information such as ingredients and instructions. The details are fetched based on the selected recipe's ID.
-- - **Browse Meals**: Users can explore recipes by categories or areas, enhancing their culinary experience without needing to search.
+- **Browse Meals**: Use the browsing feature to explore recipes by categories or regions. The application dynamically displays options.
 - **Suggest a Recipe**: Navigate to the Suggest a Recipe page to submit a new recipe through a form.
 
 ## Deployment
