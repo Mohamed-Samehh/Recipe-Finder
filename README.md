@@ -31,7 +31,6 @@ Recipe Finder is designed to make it easy for users to search for recipes based 
 - **Explore Meals by Area**: Users can view dishes from specific geographical areas, enabling them to discover regional cuisines.
 - **Suggest a Recipe**: Users can suggest new recipes by submitting a form with their name, email, dish name, and instructions.
 - **Responsive Design**: The application is fully responsive, ensuring a smooth experience across different devices.
-- **Pagination**: Recipes are displayed in a paginated format, making it easy to browse large results sets. Users can navigate through multiple pages of recipes with ease.
 
 ## Technologies Used
 
@@ -103,7 +102,6 @@ Once the application is running:
 - **View Recipe Details**: Click on a recipe to view detailed information such as ingredients and instructions. The details are fetched based on the selected recipe's ID.
 - **Suggest a Recipe**: Navigate to the Suggest a Recipe page to submit a new recipe through a form.
 - **Browse Meals**: Users can explore recipes by categories or areas, enhancing their culinary experience without needing to search.
-- **Pagination**: Use the pagination controls at the bottom of the search results to browse through multiple pages of recipes.
 
 ## Deployment
 
