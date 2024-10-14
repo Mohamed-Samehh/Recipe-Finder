@@ -21,7 +21,7 @@ GitHub Pages is used to deploy the Angular application, allowing users to intera
 
 ## Overview
 
-Recipe Finder is designed to make it easy for users to search for recipes based on ingredients or dish names. Users can browse through recipes, view detailed instructions and ingredients, and even suggest their own recipes through a form submission. The application fetches data from a recipe API and dynamically updates the view.
+Recipe Finder is designed to make it easy for users to search for recipes based on ingredients or dish names. Users can browse meals by categories and explore dishes from specific geographical areas. The app allows users to view detailed instructions and ingredients for individual recipes, and even suggest their own recipes through a form submission. The application fetches data from a recipe API and dynamically updates the view, enhancing the overall culinary experience.
 
 ## Features
 
