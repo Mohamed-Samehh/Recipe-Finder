@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RecipeService } from '../services/recipe.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -19,7 +19,8 @@ export class RecipeDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private recipeService: RecipeService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -44,6 +45,10 @@ export class RecipeDetailComponent implements OnInit {
       this.errorMessage = 'No recipe ID provided in the route.';
       this.loading = false;
     }
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   getIngredients(): string[] {
